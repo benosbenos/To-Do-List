@@ -24,9 +24,11 @@ namespace To_Do_List.ViewModel
                 new Zadanie {Id = 1, Title = "zadania"}
             };
 
+            NewZadanie = new Zadanie();
+
             AddZadanieCmd = new Command(AddZadanie);
         }
-
+        
         private void AddZadanie()
         {
             NewZadanie.Id = Zadania.Count + 1;

@@ -12,6 +12,7 @@ namespace To_Do_List.Model
         private int _amount;
         public int Id { get; set; }
         public string? Title { get; set; }
+        public DateTime Datetime { get; set; }
 
         public int Amount
         {
@@ -21,6 +22,11 @@ namespace To_Do_List.Model
                 _amount = value;
                 OnPropertyChanged(nameof(Amount));
             }
+        }
+
+        public Zadanie()
+        {
+            Datetime = DateTime.Now;
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:To_Do_List.ViewModel"
              x:Class="To_Do_List.MainPage">
+
+
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel />
+    </ContentPage.BindingContext>
 
     <ScrollView BackgroundColor="White" Padding="16">
         <VerticalStackLayout>
@@ -24,6 +30,7 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                     <RowDefinition/>
+                                    <RowDefinition/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
@@ -31,10 +38,10 @@
                                 </Grid.ColumnDefinitions>
                                 
                                 <CheckBox Grid.RowSpan="1"/>
-                                <Label TextColor="Red" Text="{Binding Title}"/>
-                                <Label FontSize="Small" Text="niedawno"/>
+                                <Label TextColor="Red" Text="{Binding Title}" Grid.Column="1" FontSize="Small"/>
+                                <Label  Text="{Binding Datetime}" Grid.Column="1" Grid.Row="1" TextColor="Black"/>
 
-                                <Line Stroke="Black"/>
+                                <Border HeightRequest="1" BackgroundColor="Black" Grid.Row="2" Grid.ColumnSpan="2"/>
                             </Grid>
                             
                         </DataTemplate>
